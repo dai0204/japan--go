@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_06_18_102019) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "user_id"
-    t.integer "prefecture_id"
+    t.string "prefecture", default: "", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
