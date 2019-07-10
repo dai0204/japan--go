@@ -1,7 +1,11 @@
 .contents.row
   .content
     .hokkaido
-      = link_to '北海道' 
+      .more
+      %span= image_tag 'arrow_top.png'
+      %ul.more_list
+        %li
+          = link_to '編集', "/tweets/#{@tweet.id}/edit", method: :get
     .touhoku
       = link_to '青森'
       = link_to '岩手'
