@@ -4,7 +4,6 @@ class TweetsController < ApplicationController
 
 
   def index
-    @tweets = Tweet.includes(:user).page(params[:page]).per(5).order("created_at DESC")
   end
 
  def new
@@ -21,7 +20,7 @@ class TweetsController < ApplicationController
  end
 
  def edit
-        @tweet = Tweet.find(params[:id])
+   @tweet = Tweet.find(params[:id])
  end
 
  def update
@@ -38,6 +37,8 @@ class TweetsController < ApplicationController
 
  def pre
   @tweets = Tweet.includes(:user).page(params[:page]).per(5).order("created_at DESC")
+  # @pres = Tweet.where(prefecture:"1").order('id DESC').limit(5)
+  # @tweets = Tweet.where(prefecture: @tweet.prefecture).order('id DESC').limit(5)
  end
 
 
