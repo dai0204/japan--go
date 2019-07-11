@@ -1,11 +1,7 @@
 .contents.row
   .content
     .hokkaido
-      .more
-      %span= image_tag 'arrow_top.png'
-      %ul.more_list
-        %li
-          = link_to '編集', "/tweets/#{@tweet.id}/edit", method: :get
+      = link_to '北海道',tweets_pre_path,method: :get
     .touhoku
       = link_to '青森'
       = link_to '岩手'
@@ -59,7 +55,3 @@
       = link_to '宮崎'
       = link_to '鹿児島'
       = link_to '沖縄'
-
-  - @tweets.each do |tweet|
-    = render partial: "tweet", locals: { tweet: tweet }
-  = paginate(@tweets)
